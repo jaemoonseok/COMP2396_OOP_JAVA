@@ -24,12 +24,13 @@ public class Game {
 	JLabel label_info = new JLabel("Please place your bet!");
 	JLabel label_money = new JLabel("Amount of money you have: $" + money);
 	JTextField txt_inputbet = new JTextField(10);
-	ImageIcon Image1 = new ImageIcon("card_back.gif");
-	ImageIcon Image2 = new ImageIcon("card_back.gif");
-	ImageIcon Image3 = new ImageIcon("card_back.gif");
-	ImageIcon Image4 = new ImageIcon("card_back.gif");
-	ImageIcon Image5 = new ImageIcon("card_back.gif");
-	ImageIcon Image6 = new ImageIcon("card_back.gif");
+	ImageIcon back = new ImageIcon("images/card_back.gif");
+	ImageIcon Image1 = back;
+	ImageIcon Image2 = back;
+	ImageIcon Image3 = back;
+	ImageIcon Image4 = back;
+	ImageIcon Image5 = back;
+	ImageIcon Image6 = back;
 	String[] deckArray = { "card_11", "card_12", "card_13", "card_14", "card_15", "card_16",
 			"card_17", "card_18", "card_19", "card_110", "card_111", "card_112", "card_113",
 			"card_21", "card_22", "card_23", "card_24", "card_25", "card_26", "card_27",
@@ -148,9 +149,9 @@ public class Game {
 				deck = new ArrayList<String>(Arrays.asList(deckArray));
 				counter = 2;
 				bet = Integer.parseInt(txt_inputbet.getText());
-				label_Image1.setIcon(new ImageIcon("card_back.gif"));
-				label_Image2.setIcon(new ImageIcon("card_back.gif"));
-				label_Image3.setIcon(new ImageIcon("card_back.gif"));
+				label_Image1.setIcon(back);
+				label_Image2.setIcon(back);
+				label_Image3.setIcon(back);
 				btn_start.setEnabled(false);
 				btn_result.setEnabled(true);
 				btn_rpcard1.setEnabled(true);
@@ -160,17 +161,17 @@ public class Game {
 				label_money.setText("Amount of money you have: $" + money);
 
 				int randomIndex = (int) (Math.random() * deck.size());
-				label_Image4.setIcon(new ImageIcon(deck.get(randomIndex) + ".gif"));
+				label_Image4.setIcon(new ImageIcon("images/" + deck.get(randomIndex) + ".gif"));
 				player[0] = deck.get(randomIndex);
 				deck.remove(randomIndex);
 
 				randomIndex = (int) (Math.random() * deck.size());
-				label_Image5.setIcon(new ImageIcon(deck.get(randomIndex) + ".gif"));
+				label_Image5.setIcon(new ImageIcon("images/" + deck.get(randomIndex) + ".gif"));
 				player[1] = deck.get(randomIndex);
 				deck.remove(randomIndex);
 
 				randomIndex = (int) (Math.random() * deck.size());
-				label_Image6.setIcon(new ImageIcon(deck.get(randomIndex) + ".gif"));
+				label_Image6.setIcon(new ImageIcon("images/" + deck.get(randomIndex) + ".gif"));
 				player[2] = deck.get(randomIndex);
 				deck.remove(randomIndex);
 
@@ -186,17 +187,17 @@ public class Game {
 			btn_start.setEnabled(true);
 			
 			int randomIndex = (int) (Math.random() * deck.size());
-			label_Image1.setIcon(new ImageIcon(deck.get(randomIndex) + ".gif"));
+			label_Image1.setIcon(new ImageIcon("images/" + deck.get(randomIndex) + ".gif"));
 			dealer[0] = deck.get(randomIndex);
 			deck.remove(randomIndex);
 
 			randomIndex = (int) (Math.random() * deck.size());
-			label_Image2.setIcon(new ImageIcon(deck.get(randomIndex) + ".gif"));
+			label_Image2.setIcon(new ImageIcon("images/" + deck.get(randomIndex) + ".gif"));
 			dealer[1] = deck.get(randomIndex);
 			deck.remove(randomIndex);
 
 			randomIndex = (int) (Math.random() * deck.size());
-			label_Image3.setIcon(new ImageIcon(deck.get(randomIndex) + ".gif"));
+			label_Image3.setIcon(new ImageIcon("images/" + deck.get(randomIndex) + ".gif"));
 			dealer[2] = deck.get(randomIndex);
 			deck.remove(randomIndex);
 
@@ -214,12 +215,12 @@ public class Game {
 			
 			btn_result.setEnabled(false);
 			
-			label_Image1.setIcon(new ImageIcon("card_back.gif"));
-			label_Image2.setIcon(new ImageIcon("card_back.gif"));
-			label_Image3.setIcon(new ImageIcon("card_back.gif"));
-			label_Image4.setIcon(new ImageIcon("card_back.gif"));
-			label_Image5.setIcon(new ImageIcon("card_back.gif"));
-			label_Image6.setIcon(new ImageIcon("card_back.gif"));
+			label_Image1.setIcon(back);
+			label_Image2.setIcon(back);
+			label_Image3.setIcon(back);
+			label_Image4.setIcon(back);
+			label_Image5.setIcon(back);
+			label_Image6.setIcon(back);
 			
 		}
 	}
@@ -227,7 +228,7 @@ public class Game {
 	class ReplaceOne implements ActionListener {
 		public void actionPerformed(ActionEvent event) {
 			int randomIndex = (int) (Math.random() * deck.size());
-			label_Image4.setIcon(new ImageIcon(deck.get(randomIndex) + ".gif"));
+			label_Image4.setIcon(new ImageIcon("images/" + deck.get(randomIndex) + ".gif"));
 			player[0] = deck.get(randomIndex);
 			deck.remove(randomIndex);
 			btn_rpcard1.setEnabled(false);
@@ -244,7 +245,7 @@ public class Game {
 	class ReplaceTwo implements ActionListener {
 		public void actionPerformed(ActionEvent event) {
 			int randomIndex = (int) (Math.random() * deck.size());
-			label_Image5.setIcon(new ImageIcon(deck.get(randomIndex) + ".gif"));
+			label_Image5.setIcon(new ImageIcon("images/" + deck.get(randomIndex) + ".gif"));
 			player[1] = deck.get(randomIndex);
 			deck.remove(randomIndex);
 			btn_rpcard2.setEnabled(false);
@@ -260,7 +261,7 @@ public class Game {
 	class ReplaceThree implements ActionListener {
 		public void actionPerformed(ActionEvent event) {
 			int randomIndex = (int) (Math.random() * deck.size());
-			label_Image6.setIcon(new ImageIcon(deck.get(randomIndex) + ".gif"));
+			label_Image6.setIcon(new ImageIcon("images/" + deck.get(randomIndex) + ".gif"));
 			player[2] = deck.get(randomIndex);
 			deck.remove(randomIndex);
 			btn_rpcard3.setEnabled(false);
